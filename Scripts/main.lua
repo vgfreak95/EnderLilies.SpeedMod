@@ -18,15 +18,22 @@ function SpeedLily(multiplier)
     local movement = lily.CharacterMovement
     if speedToggle then
       print("Lily is speeding...")
+
+      -- Land movement
       movement.MaxRunSpeed = 500 * multiplier
       movement.MaxAcceleration = 2048 * multiplier
       movement.MaxWalkSpeed = 100 * multiplier
+
+      -- Water movement
+      movement.MaxSwimSpeed = 400 * multiplier
 
     -- Revert to default speeds
     else
       movement.MaxRunSpeed = 500
       movement.MaxAcceleration = 2048
       movement.MaxWalkSpeed = 100
+      movement.MaxSwimSpeed = 400
+
       print("Stopped the toggle")
     end
   else
